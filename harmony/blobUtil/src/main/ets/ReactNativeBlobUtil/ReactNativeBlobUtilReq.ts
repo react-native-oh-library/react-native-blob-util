@@ -63,7 +63,7 @@ export default class ReactNativeBlobUtilReq {
   httpRequest: http.HttpRequest;
   responseType: ResponseType;
   responseFormat: ResponseFormat = ResponseFormat.Auto;
-  resHeaders: Object;
+  resHeaders: Object = {};
   totalReceiveData: Array<ArrayBuffer> = [];
   allData: Array<any> = [];
 

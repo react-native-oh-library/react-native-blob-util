@@ -157,7 +157,16 @@ export default class ReactNativeBlobUtilFS {
         if (append && accessRes) {
           file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.APPEND);
         }
-        let writeLen = fs.writeSync(file.fd, data);
+        let writeLen = -1;
+        if(encoding === 'base64'){
+            const reg = new RegExp("data:image/\\w+;base64,")
+            const base64 = data.replace(reg, "");
+            console.log("base64flag", base64)
+            const dataBuffer = buffer.from(base64, 'base64')
+            writeLen = fs.writeSync(file.fd, dataBuffer.buffer);
+        }else{
+            writeLen = fs.writeSync(file.fd, data)
+        }
         if (writeLen === -1) {
           console.log("write data to file succeed and size is:" + writeLen);
         } else {

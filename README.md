@@ -1,6 +1,6 @@
 # @react-native-oh-tpl/react-native-blob-util
 
-This project is based on [react-native-blob-util](https://github.com/RonRadtke/react-native-blob-util)
+This project is based on [react-native-blob-util@0.19.6](https://github.com/RonRadtke/react-native-blob-util/tree/0.19.6)
 
 ## Documentation
 

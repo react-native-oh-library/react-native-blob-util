@@ -431,7 +431,7 @@ export interface FS {
      */
     exists(path: string): Promise<boolean>;
 
-    createFile(path: string, data: string, encoding: Encoding): Promise<void>;
+    createFile(path: string, data: string | number[], encoding: Encoding): Promise<void>;
 
     isDir(path: string): Promise<boolean>;
 
@@ -497,7 +497,7 @@ export interface ReactNativeBlobUtilWriteStream {
     encoding: string;
     append: boolean;
 
-    write(data: string): Promise<void>;
+    write(data: string | Array<any>): Promise<void>;
 
     close(): Promise<void>;
 }

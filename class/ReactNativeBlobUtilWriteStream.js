@@ -15,7 +15,7 @@ export default class ReactNativeBlobUtilWriteStream {
     this.append = append;
   }
 
-  write(data:string): Promise<ReactNativeBlobUtilWriteStream> {
+  write(data:string | Array<any>): Promise<ReactNativeBlobUtilWriteStream> {
     return new Promise((resolve, reject) => {
       try {
         let method = this.encoding === 'ascii' ? 'writeArrayChunk' : 'writeChunk';

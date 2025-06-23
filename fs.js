@@ -64,7 +64,7 @@ function asset(path: string): string {
     return 'bundle-assets://' + path;
 }
 
-function createFile(path: string, data: string, encoding: 'base64' | 'ascii' | 'utf8' = 'utf8'): Promise<string> {
+function createFile(path: string, data: string | number[], encoding: 'base64' | 'ascii' | 'utf8' = 'utf8'): Promise<string> {
     if (encoding.toLowerCase() === 'ascii') {
         return Array.isArray(data) ?
             ReactNativeBlobUtil.createFileASCII(path, data) :
